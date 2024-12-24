@@ -1,0 +1,41 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block page_header %}
+  <style>
+    body {
+      color: #333; /* 文本颜色 */
+      font-family: 'Arial', sans-serif; /* 更改字体 */
+    }
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem; /* 增加内边距 */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+      background-color: rgba(255, 255, 255, 0.3); /* 调整为更透明的背景 */
+    }
+    .btn {
+      background-color: pink; /* 更改按钮颜色 */
+      border: none; /* 取消按钮边框 */
+      border-radius: 5px; /* 添加圆角 */
+      padding: 10px 20px; /* 增加按钮内边距 */
+    }
+    .btn:hover {
+      background-color: #0056b3; /* 悬停效果 */
+    }
+    
+  </style>
+
+  <div class="header-container">
+    <h1 class="display-3">Track your learning.</h1>
+    
+    <p class="lead">Make your own Learning Log, and keep a list of the
+    topics you're learning about. Whenever you learn something new
+    about a topic, make an entry summarizing what you've learned.</p>
+
+    <a class="btn btn-lg mt-1"
+        href="{% url 'accounts:register' %}">Register &raquo;</a>
+  </div>
+{% endblock page_header %}
