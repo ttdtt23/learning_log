@@ -49,6 +49,7 @@ def new_topic(request):
 def new_entry(request, topic_id):
     """添加新条目"""
     topic = Topic.objects.get(id=topic_id)
+    check_topic_owner(topic, request.user)
     if request.method != 'POST':
         # 未提交数据：创建一个新表单
         form = EntryForm()
