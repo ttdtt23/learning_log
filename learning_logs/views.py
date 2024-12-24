@@ -9,8 +9,8 @@ def index(request):
 
 @login_required
 def topics(request):
-    """显示所有的主题"""
-    topics = Topic.objects.order_by('date_added')
+    """向用户显示其自己创建的主题"""
+    topics = Topic.objects.filter(owner=request.user).order_by('date_added')
     context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
