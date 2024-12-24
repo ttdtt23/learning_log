@@ -7,7 +7,7 @@ def register(request):
     """注册新用户"""
     if request.method != 'POST':
         # 显示空的注册表单
-        ❶ form = UserCreationForm()
+        form = UserCreationForm()
     else:
         # 处理填写好的表单
         form = UserCreationForm(data=request.POST)
